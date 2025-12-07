@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/bgm/MenuTheme.wav</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/bgm/OceanCommotion.wav</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/AccuracyButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/AttackSpdButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Blob-Hurt.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Blob.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/blobSpritesheetFINAL(96x96).png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/BlobStatsButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/BlobWeapons.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Bubble.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/clamSpritesheetFINAL(96x96).png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Coin.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/ControlsMenu.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Crab.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/CrabClaw.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Crosshair.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/ExiButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/GameOver.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Heart.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Jellyfish.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Laser.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/MagSizeButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/MicrosoftTeams-image.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Padlock.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Pearl.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/test_bg.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/TestBG2.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/Title.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/TutorialButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/UpgradeBar.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/UpgradeButton.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/images/UpgradeMenuBG.png</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/misc/Arial.spritefont</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/misc/BackgroundShader.fx</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/misc/GrayscaleEffect.fx</File>
+    <File>C:/Users/mikey/OneDrive/Desktop/BlobsRevenge/StudentProject/Content/misc/SpriteFill.fx</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>images/Blob.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>images/Clam.png</File>
+    <File xsi:nil="true" />
+    <File>images/Controls.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>images/ExitButton.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
