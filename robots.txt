@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scotmortgages.co.uk/sitemap.xml

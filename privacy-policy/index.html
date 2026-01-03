@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | ScotMortgages</title>
+  
+    <meta name="description" content="" />
+  
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB742_C3HnSBNjzZzvEClKAlhX7xNRMiUc&libraries=places&callback=loadReviews" 
+        async defer
+  ></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/reviews.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+  <header id="header" class="fixed top-0 w-full z-50 bg-primary">
+    <nav class="p-2 xl:px-0 z-10 relative flex flex-row items-center justify-center xl:justify-evenly xl:w-[100rem] xl:max-w-[90%] xl:mx-auto text-black bg-inherit xl:bg-transparent"
+        id="nav-bar">
+
+        <a href="/" class="flex items-center space-x-2 my-2 xl:hidden">
+            <img class="h-20 xl:h-24" src="/images/logo.png" alt="" />
+        </a>
+
+        <button id="nav-button" class="xl:hidden mx-4 absolute right-0 top-1/2 -translate-y-1/2"
+            aria-label="navigation toggle button" onclick="ToggleNav();">
+            <div id="nav-icon" class="relative cursor-pointer w-6 h-4">
+                <span id="icon-upper"
+                    class="absolute top-0 block w-full h-0.5 bg-black transition-transform duration-200"></span>
+                <span id="icon-middle"
+                    class="absolute top-1/2 -translate-y-1/2 block w-full h-0.5 bg-black opacity-100 transition-opacity duration-200"></span>
+                <span id="icon-lower"
+                    class="absolute bottom-0 block w-full h-0.5 bg-black transition-transform duration-200"></span>
+            </div>
+        </button>
+
+        <div class="group bg-inherit xl:flex-1">
+            <ul id="nav-list"
+                class="absolute xl:static top-full left-0 right-0 w-full bg-inherit pb-5 xl:p-0 xl:h-auto flex-col xl:flex-row items-center gap-3 xl:gap-5 xl:flex hidden xl:w-full xl:justify-between">
+
+                <li class="xl:flex flex-col items-center hidden">
+                    <a href="/" class="flex items-center space-x-2 my-2">
+                        <img class="h-20 xl:h-24" src="/images/logo.png" alt="" />
+                    </a>
+                </li>
+
+                <li class="w-full xl:w-auto">
+                    <div onmouseenter="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.remove('hidden');
+    this.querySelector('#dropdwon-list').classList.add('flex');
+  " 
+  onmouseleave="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.add('hidden');
+    this.querySelector('#dropdwon-list').classList.remove('flex');
+  "
+  class="relative flex flex-col items-center xl:items-start font-bold">
+  <button class="flex flex-row items-center relative" onclick="
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('hidden');
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('flex');
+    ">
+    Mortgages
+  </button>
+
+  <ul id="dropdwon-list" class="xl:absolute xl:top-full flex-col items-center xl:items-start bg-accent px-2 gap-3 pt-3 xl:pb-3
+          xl:px-3 hidden w-full xl:w-auto">
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/first-time-buyers" class="hover:underline whitespace-nowrap">First Time Buyers</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/remortgage" class="hover:underline whitespace-nowrap">Remortgage</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/home-movers" class="hover:underline whitespace-nowrap">Home Movers</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/self-employed-mortgages" class="hover:underline whitespace-nowrap">Self Employed Mortgages</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/buy-to-let-mortgages" class="hover:underline whitespace-nowrap">Buy-to-let Mortgages</a>
+    </li>
+    
+  </ul>
+</div>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <div onmouseenter="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.remove('hidden');
+    this.querySelector('#dropdwon-list').classList.add('flex');
+  " 
+  onmouseleave="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.add('hidden');
+    this.querySelector('#dropdwon-list').classList.remove('flex');
+  "
+  class="relative flex flex-col items-center xl:items-start font-bold">
+  <button class="flex flex-row items-center relative" onclick="
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('hidden');
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('flex');
+    ">
+    Insurance
+  </button>
+
+  <ul id="dropdwon-list" class="xl:absolute xl:top-full flex-col items-center xl:items-start bg-accent px-2 gap-3 pt-3 xl:pb-3
+          xl:px-3 hidden w-full xl:w-auto">
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/buildings-and-contents-insurance" class="hover:underline whitespace-nowrap">Building &amp; Contents</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/life-and-critical-illness-insurance" class="hover:underline whitespace-nowrap">Life &amp; Critical Illness</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/income-protection" class="hover:underline whitespace-nowrap">Income Protection</a>
+    </li>
+    
+  </ul>
+</div>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/financial-planning" class="hover:underline font-bold">Financial Planning</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/our-people" class="hover:underline font-bold">Our People</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/refer-a-friend" class="hover:underline font-bold">Refer A Friend</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/contact-us" class="hover:underline font-bold">Contact Us</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/book-appointment" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="nav-backdrop" onclick="ToggleNav()"
+        class="hidden xl:hidden absolute top-full h-screen left-0 right-0 bg-black opacity-50"></div>
+</header>
+
+  <main>
+    
+<h1>Privacy Policy</h1>
+<p>Your privacy is important to us. This privacy policy explains how we collect, use, and protect your personal information...</p>
+
+  </main>
+
+  <footer class="bg-accent flex flex-col py-4 container-gapping items-center">
+    <div class="container-sizing container-gapping flex flex-col lg:flex-row lg:justify-around">
+        <div class="lg:w-fit flex flex-col gap-2">
+            <h3 class="font-bold">Contact</h3>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="mailto:info@scotmortgages.co.uk" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                <a href="mailto:info@scotmortgages.co.uk" class="underline">info@scotmortgages.co.uk</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="tel:01334 656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                <a href="tel:01334 656511" class="underline">01334 656511</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="https://www.instagram.com/scotmortgages/"
+                    class="fa-solid fa-brands fa-instagram text-4xl w-fit"> </a>
+                <a href="https://www.instagram.com/scotmortgages/" class="underline">@scotmortgages</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="https://www.facebook.com/ScotMortgages" class="fa-solid fa-brands fa-facebook text-4xl w-fit">
+                </a>
+                <a href="https://www.facebook.com/ScotMortgages" class="underline">@ScotMortgages</a>
+            </div>
+        </div>
+        <div class="lg:w-fit">
+            <h3 class="font-bold">Find Us</h3>
+
+            <address>
+                Westrigg,
+                West Port
+                Cupar
+                KY15 4AN
+            </address>
+
+            <iframe class="w-full max-w-[512px] lg:max-w-64 aspect-square"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.7076873119368!2d-3.0224474!3d56.3183477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48864fc0de85084b%3A0x9d746ea3b479790e!2sScotMortgages%20and%20Financial%20Services!5e1!3m2!1sen!2suk!4v1761841101484!5m2!1sen!2suk"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="lg:w-fit">
+            <h3 class="font-bold">Useful Links</h3>
+            <ul class="list-none">
+                <li>
+                    <a href="/" class="hover:underline">Home</a>
+                </li>
+                <li>
+                    <a href="/first-time-buyers" class="hover:underline">First Time Buyers</a>
+                </li>
+                <li>
+                    <a href="/remortgage" class="hover:underline">Remortgage</a>
+                </li>
+                <li>
+                    <a href="/home-movers" class="hover:underline">Home Movers</a>
+                </li>
+                <li>
+                    <a href="/self-employed-mortgages" class="hover:underline">Self Employed Mortgages</a>
+                </li>
+                <li>
+                    <a href="/buy-to-let-mortgages" class="hover:underline">Buy-to-let Mortgages</a>
+                </li>
+                <li>
+                    <a href="/buildings-and-contents-insurance" class="hover:underline">Buildings & Contents Insurance</a>
+                </li>
+                <li>
+                    <a href="/life-and-critical-illness-insurance" class="hover:underline">Life & Critical Illness Insurance</a>
+                </li>
+                <li>
+                    <a href="/income-protection" class="hover:underline">Income Protection</a>
+                </li>
+                <li>
+                    <a href="/financial-planning" class="hover:underline">Financial Planning</a>
+                </li>
+                <li>
+                    <a href="/our-people" class="hover:underline">Our People</a>
+                </li>
+                <li>
+                    <a href="/refer-a-friend" class="hover:underline">Refer A Friend</a>
+                </li>
+                <li>
+                    <a href="/contact-us" class="hover:underline">Contact Us</a>
+                </li>
+                <li>
+                    <a href="/book-appointment" class="hover:underline">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-sizing container-gapping text-center flex flex-col items-center">
+        <p>The information on this website is subject to the UK regulatory regime and is therefore targeted at consumers
+            in the UK.</p>
+        <p>Copyright © 2025 ScotMortgages & Financial Services</p>
+    </div>
+</footer>
+</body>
+
+<script>
+    function setHeaderOffset() {
+        const header = document.getElementById("header");
+        if (!header) return;
+
+        document.body.style.marginTop = header.offsetHeight + "px";
+    }
+
+    window.addEventListener("DOMContentLoaded", setHeaderOffset);
+    window.addEventListener("load", setHeaderOffset);
+    window.addEventListener("resize", setHeaderOffset);
+</script>
+</html>

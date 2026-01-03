@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refer A Friend | ScotMortgages</title>
+  
+    <meta name="description" content="" />
+  
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB742_C3HnSBNjzZzvEClKAlhX7xNRMiUc&libraries=places&callback=loadReviews" 
+        async defer
+  ></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/reviews.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+  <header id="header" class="fixed top-0 w-full z-50 bg-primary">
+    <nav class="p-2 xl:px-0 z-10 relative flex flex-row items-center justify-center xl:justify-evenly xl:w-[100rem] xl:max-w-[90%] xl:mx-auto text-black bg-inherit xl:bg-transparent"
+        id="nav-bar">
+
+        <a href="/" class="flex items-center space-x-2 my-2 xl:hidden">
+            <img class="h-20 xl:h-24" src="/images/logo.png" alt="" />
+        </a>
+
+        <button id="nav-button" class="xl:hidden mx-4 absolute right-0 top-1/2 -translate-y-1/2"
+            aria-label="navigation toggle button" onclick="ToggleNav();">
+            <div id="nav-icon" class="relative cursor-pointer w-6 h-4">
+                <span id="icon-upper"
+                    class="absolute top-0 block w-full h-0.5 bg-black transition-transform duration-200"></span>
+                <span id="icon-middle"
+                    class="absolute top-1/2 -translate-y-1/2 block w-full h-0.5 bg-black opacity-100 transition-opacity duration-200"></span>
+                <span id="icon-lower"
+                    class="absolute bottom-0 block w-full h-0.5 bg-black transition-transform duration-200"></span>
+            </div>
+        </button>
+
+        <div class="group bg-inherit xl:flex-1">
+            <ul id="nav-list"
+                class="absolute xl:static top-full left-0 right-0 w-full bg-inherit pb-5 xl:p-0 xl:h-auto flex-col xl:flex-row items-center gap-3 xl:gap-5 xl:flex hidden xl:w-full xl:justify-between">
+
+                <li class="xl:flex flex-col items-center hidden">
+                    <a href="/" class="flex items-center space-x-2 my-2">
+                        <img class="h-20 xl:h-24" src="/images/logo.png" alt="" />
+                    </a>
+                </li>
+
+                <li class="w-full xl:w-auto">
+                    <div onmouseenter="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.remove('hidden');
+    this.querySelector('#dropdwon-list').classList.add('flex');
+  " 
+  onmouseleave="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.add('hidden');
+    this.querySelector('#dropdwon-list').classList.remove('flex');
+  "
+  class="relative flex flex-col items-center xl:items-start font-bold">
+  <button class="flex flex-row items-center relative" onclick="
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('hidden');
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('flex');
+    ">
+    Mortgages
+  </button>
+
+  <ul id="dropdwon-list" class="xl:absolute xl:top-full flex-col items-center xl:items-start bg-accent px-2 gap-3 pt-3 xl:pb-3
+          xl:px-3 hidden w-full xl:w-auto">
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/first-time-buyers" class="hover:underline whitespace-nowrap">First Time Buyers</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/remortgage" class="hover:underline whitespace-nowrap">Remortgage</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/home-movers" class="hover:underline whitespace-nowrap">Home Movers</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/self-employed-mortgages" class="hover:underline whitespace-nowrap">Self Employed Mortgages</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/buy-to-let-mortgages" class="hover:underline whitespace-nowrap">Buy-to-let Mortgages</a>
+    </li>
+    
+  </ul>
+</div>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <div onmouseenter="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.remove('hidden');
+    this.querySelector('#dropdwon-list').classList.add('flex');
+  " 
+  onmouseleave="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.add('hidden');
+    this.querySelector('#dropdwon-list').classList.remove('flex');
+  "
+  class="relative flex flex-col items-center xl:items-start font-bold">
+  <button class="flex flex-row items-center relative" onclick="
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('hidden');
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('flex');
+    ">
+    Insurance
+  </button>
+
+  <ul id="dropdwon-list" class="xl:absolute xl:top-full flex-col items-center xl:items-start bg-accent px-2 gap-3 pt-3 xl:pb-3
+          xl:px-3 hidden w-full xl:w-auto">
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/buildings-and-contents-insurance" class="hover:underline whitespace-nowrap">Building &amp; Contents</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/life-and-critical-illness-insurance" class="hover:underline whitespace-nowrap">Life &amp; Critical Illness</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/income-protection" class="hover:underline whitespace-nowrap">Income Protection</a>
+    </li>
+    
+  </ul>
+</div>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/financial-planning" class="hover:underline font-bold">Financial Planning</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/our-people" class="hover:underline font-bold">Our People</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/refer-a-friend" class="hover:underline font-bold">Refer A Friend</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/contact-us" class="hover:underline font-bold">Contact Us</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/book-appointment" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="nav-backdrop" onclick="ToggleNav()"
+        class="hidden xl:hidden absolute top-full h-screen left-0 right-0 bg-black opacity-50"></div>
+</header>
+
+  <main>
+    
+
+<div class="flex flex-col justify-center container-sizing py-8 gap-12 h-[30vh] sm:h-[50vh] min-h-[600px] sm:min-h-[800px]">
+        <h1 class="text-white w-fit text-[clamp(2.5rem,5vw,6rem)] leading-[clamp(3rem,6vw,7.2rem)] font-bold block">Refer A Friend</h1>
+        <h2 class="text-white text-[clamp(1.75rem,3.5vw,4rem)] leading-[clamp(2.1rem,4.2vw,4.8rem)] font-bold block">Recommend a friend to us for a £50 voucher</h2>
+
+        
+        <div class="flex flex-row gap-4 flex-wrap">
+            <a href="/book-appointment" class="font-bold w-fit rounded-3xl py-4 px-8 bg-black cursor-pointer text-white">Book
+                Appointment</a>
+            <a href="/contact-us" class="font-bold w-fit rounded-3xl py-4 px-8 bg-white cursor-pointer">Contact Us</a>
+        </div>
+        
+</div>
+
+<div class="container-sizing container-gapping flex flex-col">
+    <h2 class="font-bold text-center">How It Works</h2>
+
+    <h2 class="font-bold text-2xl text-white text-center">Step 1</h2>
+
+<div class="container-gapping flex flex-col lg:flex-row justify-around h-fit relative">
+
+    <div class="flex-1 flex flex-row justify-center items-center">
+        <p class="font-bold text-white w-96 max-w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    
+    <div class="hidden lg:flex flex-col items-center container-gapping">
+        <span class="border h-full w-0 border-dashed"></span>
+    </div>
+    
+
+
+    <div class="flex-1 flex flex-row justify-center">
+        <div class="container-gapping w-96 max-w-full h-72 border-4 border-blue-900 rounded-lg bg-white relative">
+        </div>
+
+    </div>
+</div>
+    <h2 class="font-bold text-2xl text-white text-center">Step 2</h2>
+
+<div class="container-gapping flex flex-col lg:flex-row-reverse justify-around h-fit relative">
+
+    <div class="flex-1 flex flex-row justify-center items-center">
+        <p class="font-bold text-white w-96 max-w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    
+    <div class="hidden lg:flex flex-col items-center container-gapping">
+        <span class="border h-full w-0 border-dashed"></span>
+    </div>
+    
+
+
+    <div class="flex-1 flex flex-row justify-center">
+        <div class="container-gapping w-96 max-w-full h-72 border-4 border-blue-900 rounded-lg bg-white relative">
+        </div>
+
+    </div>
+</div>
+    <h2 class="font-bold text-2xl text-white text-center">Step 3</h2>
+
+<div class="container-gapping flex flex-col lg:flex-row justify-around h-fit relative">
+
+    <div class="flex-1 flex flex-row justify-center items-center">
+        <p class="font-bold text-white w-96 max-w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    
+    
+    
+
+
+    <div class="flex-1 flex flex-row justify-center">
+        <div class="container-gapping w-96 max-w-full h-72 border-4 border-blue-900 rounded-lg bg-white relative">
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+<div class="flex flex-col container-sizing container-gapping">
+    <h2 class="font-bold text-center">Vouchers Available</h2>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-24">
+
+        <div class="flex flex-col items-center container-gapping max-w-full">
+            <span class="w-64 max-w-full aspect-square border-4 border-blue-900 rounded-full bg-white overflow-hidden flex flex-col justify-center items-center">
+                <img src="./images/amazon.png" class="w-4/5">
+            </span>
+            <h3 class="font-bold text-white text-lg">£50 Amazon</h3>
+
+        </div>
+
+        <div class="flex flex-col items-center container-gapping max-w-full">
+            <span class="w-64 max-w-full aspect-square border-4 border-blue-900 rounded-full bg-white overflow-hidden flex flex-col justify-center items-center">
+                <img src="./images/love-2-shop.jpg" class="w-4/5">
+            </span>
+            <h3 class="font-bold text-white text-lg">£50 Love2Shop</h3>
+        </div>
+    </div>
+</div>
+
+<div
+    class="w-[64rem] max-w-[90%] mx-auto bg-white rounded-lg p-6 flex flex-col container-gapping border-4 border-blue-900">
+
+    <h3 class="font-bold text-2xl">Refer a Friend</h3>
+
+    <p>Enter both you and your friends details here. If your friend takes out a mortgage with us, we will grant you a £50 voucher of your choice.</p>
+
+
+    <form action="https://formspree.io/f/mrblgyya" method="post" class="flex flex-col gap-3">
+        <h3>Your Details:</h3>
+        <label for="your-name" class="sr-only">Your Full Name</label>
+        <input required type="text" id="your-name" name="your-name" class="form-input" placeholder="Your Name">
+
+        <label for="your-email" class="sr-only">Your Email Address</label>
+        <input required type="email" id="your-email" name="your-email" class="form-input"
+            placeholder="Your Email Address">
+
+        <label for="your-postcode" class="sr-only">Your Postcode</label>
+        <input required type="text" id="your-post-code" name="your-post-code" class="form-input"
+            placeholder="Your Postcode" pattern="([a-zA-Z]{1,2}\d{1,2}[a-zA-Z]? ?\d[a-zA-Z]{2}|GIR ?0AA)"
+            title="Enter a valid UK postcode">
+
+        <label for="voucher-choice" class="sr-only">Voucher Choice</label>
+        <select required id="voucher-choice" name="voucher-choice" class="form-input invalid:text-gray-400">
+            <option class="text-gray-400" value="">Select Preferred Voucher</option>
+            <option class="text-black" value="amazon">£50 Amazon</option>
+            <option class="text-black" value="love2shop">£50 Love2Shop</option>
+        </select>
+
+        <h3>Friend's Details:</h3>
+        <label for="friends-name" class="sr-only">Friend's Full Name</label>
+        <input required type="text" id="Friends-name" name="Friends-name" class="form-input"
+            placeholder="Friend's Full Name">
+
+        <label for="friends-email" class="sr-only">Friend's Email Address</label>
+        <input required type="email" id="friends-email" name="friends-email" class="form-input"
+            placeholder="Friend's Email Address">
+
+        <label for="friends-phone-number" class="sr-only">Friend's Phone Number</label>
+        <input required type="tel" id="friends-phone-number" name="friends-phone-number" class="form-input"
+            placeholder="Friend's Phone Number">
+
+        <div class="flex flex-row items-center">
+            <input type="checkbox" id="consent" name="consent" required class="mr-2 rounded-none">
+            <label for="consent" class="text-gray-700">
+                As an existing client of ScotMortgages, I can confirm that I have spoken to the person I have referred you to and can confirm that they are happy for ScotMortgages to get in touch with them.
+            </label>
+        </div>
+
+        <div class="g-recaptcha" data-sitekey="6LfOTYYrAAAAANRus_3TLqVmcMkrWSVPB9cZLtU0"></div>
+        <input type="text" name="_gotcha" style="display:none">
+        <input type="submit" value="Submit" class="contact-btn cursor-pointer font-bold">
+    </form>
+</div>
+
+<div class="flex flex-col container-sizing container-gapping bg-white rounded-lg p-6 border-4 border-blue-900">
+    <h2 class="font-bold text-center">Terms & Conditions</h2>
+
+    <ul class="list-disc space-y-6 list-inside pl-5">
+        <li>“Refer-a-Friend” offers are only open and available to UK residents aged 18 and over.</li>
+        
+        <li>The referrer must notify the referred client and seek their consent to their details being given to a firm or trading style before the date of referral. This is the responsibility of the party referring the new client and is subject to the General Data Protection Regulation (GDPR). The referrer will indemnify the firm or trading style against any loss or claim arising from the referrer’s failure to obtain such consent.</li>
+    
+        <li>A referred client can only be referred once. In the event that a client is referred to a firm or trading style more than once, only the first referrer will be eligible for a referral gift.</li>
+    
+        <li>The referrer will not be eligible for any referral gift in the event that the referred client has already commenced or completed business with the firm or trading style.</li>
+    
+        <li>In the event that the firm or trading style is unable to provide a previously stated referral gift, the referrer will receive an alternative gift of equal value subject to these terms and conditions. A cash alternative IS NOT PERMITTED under any circumstances, and the referral gift is non-transferable.</li>
+    
+        <li>Permanent employees, contractors or temporary workers working directly for the firm or trading style are not eligible to participate in the referral scheme.</li>
+    
+        <li>The firm or trading style has the right to withdraw this offer at any time.</li>
+    
+        <li>Where a client refers a new client, the new client must engage with the firm or trading style within 3 months of the referral being made. Referrers will not be eligible for a referral gift where instructions are received outside of this period.</p>
+    
+        <li>The referrer will receive the gift within 30 days of the referred client submitting or completing business with the firm or trading style.</li>
+    
+        <lip>By referring a friend, the referrer is indicating their agreement to be bound by these terms and conditions.</li>
+
+    </div>
+</div>
+
+<div class="container-sizing container-gapping">
+    <h2 class="font-bold text-center">Terms & Conditions</h2>
+</div>
+
+
+  </main>
+
+  <footer class="bg-accent flex flex-col py-4 container-gapping items-center">
+    <div class="container-sizing container-gapping flex flex-col lg:flex-row lg:justify-around">
+        <div class="lg:w-fit flex flex-col gap-2">
+            <h3 class="font-bold">Contact</h3>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="mailto:info@scotmortgages.co.uk" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                <a href="mailto:info@scotmortgages.co.uk" class="underline">info@scotmortgages.co.uk</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="tel:01334 656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                <a href="tel:01334 656511" class="underline">01334 656511</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="https://www.instagram.com/scotmortgages/"
+                    class="fa-solid fa-brands fa-instagram text-4xl w-fit"> </a>
+                <a href="https://www.instagram.com/scotmortgages/" class="underline">@scotmortgages</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="https://www.facebook.com/ScotMortgages" class="fa-solid fa-brands fa-facebook text-4xl w-fit">
+                </a>
+                <a href="https://www.facebook.com/ScotMortgages" class="underline">@ScotMortgages</a>
+            </div>
+        </div>
+        <div class="lg:w-fit">
+            <h3 class="font-bold">Find Us</h3>
+
+            <address>
+                Westrigg,
+                West Port
+                Cupar
+                KY15 4AN
+            </address>
+
+            <iframe class="w-full max-w-[512px] lg:max-w-64 aspect-square"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.7076873119368!2d-3.0224474!3d56.3183477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48864fc0de85084b%3A0x9d746ea3b479790e!2sScotMortgages%20and%20Financial%20Services!5e1!3m2!1sen!2suk!4v1761841101484!5m2!1sen!2suk"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="lg:w-fit">
+            <h3 class="font-bold">Useful Links</h3>
+            <ul class="list-none">
+                <li>
+                    <a href="/" class="hover:underline">Home</a>
+                </li>
+                <li>
+                    <a href="/first-time-buyers" class="hover:underline">First Time Buyers</a>
+                </li>
+                <li>
+                    <a href="/remortgage" class="hover:underline">Remortgage</a>
+                </li>
+                <li>
+                    <a href="/home-movers" class="hover:underline">Home Movers</a>
+                </li>
+                <li>
+                    <a href="/self-employed-mortgages" class="hover:underline">Self Employed Mortgages</a>
+                </li>
+                <li>
+                    <a href="/buy-to-let-mortgages" class="hover:underline">Buy-to-let Mortgages</a>
+                </li>
+                <li>
+                    <a href="/buildings-and-contents-insurance" class="hover:underline">Buildings & Contents Insurance</a>
+                </li>
+                <li>
+                    <a href="/life-and-critical-illness-insurance" class="hover:underline">Life & Critical Illness Insurance</a>
+                </li>
+                <li>
+                    <a href="/income-protection" class="hover:underline">Income Protection</a>
+                </li>
+                <li>
+                    <a href="/financial-planning" class="hover:underline">Financial Planning</a>
+                </li>
+                <li>
+                    <a href="/our-people" class="hover:underline">Our People</a>
+                </li>
+                <li>
+                    <a href="/refer-a-friend" class="hover:underline">Refer A Friend</a>
+                </li>
+                <li>
+                    <a href="/contact-us" class="hover:underline">Contact Us</a>
+                </li>
+                <li>
+                    <a href="/book-appointment" class="hover:underline">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-sizing container-gapping text-center flex flex-col items-center">
+        <p>The information on this website is subject to the UK regulatory regime and is therefore targeted at consumers
+            in the UK.</p>
+        <p>Copyright © 2025 ScotMortgages & Financial Services</p>
+    </div>
+</footer>
+</body>
+
+<script>
+    function setHeaderOffset() {
+        const header = document.getElementById("header");
+        if (!header) return;
+
+        document.body.style.marginTop = header.offsetHeight + "px";
+    }
+
+    window.addEventListener("DOMContentLoaded", setHeaderOffset);
+    window.addEventListener("load", setHeaderOffset);
+    window.addEventListener("resize", setHeaderOffset);
+</script>
+</html>

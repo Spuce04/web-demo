@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our People | ScotMortgages</title>
+  
+    <meta name="description" content="" />
+  
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB742_C3HnSBNjzZzvEClKAlhX7xNRMiUc&libraries=places&callback=loadReviews" 
+        async defer
+  ></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/reviews.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+  <header id="header" class="fixed top-0 w-full z-50 bg-primary">
+    <nav class="p-2 xl:px-0 z-10 relative flex flex-row items-center justify-center xl:justify-evenly xl:w-[100rem] xl:max-w-[90%] xl:mx-auto text-black bg-inherit xl:bg-transparent"
+        id="nav-bar">
+
+        <a href="/" class="flex items-center space-x-2 my-2 xl:hidden">
+            <img class="h-20 xl:h-24" src="/images/logo.png" alt="" />
+        </a>
+
+        <button id="nav-button" class="xl:hidden mx-4 absolute right-0 top-1/2 -translate-y-1/2"
+            aria-label="navigation toggle button" onclick="ToggleNav();">
+            <div id="nav-icon" class="relative cursor-pointer w-6 h-4">
+                <span id="icon-upper"
+                    class="absolute top-0 block w-full h-0.5 bg-black transition-transform duration-200"></span>
+                <span id="icon-middle"
+                    class="absolute top-1/2 -translate-y-1/2 block w-full h-0.5 bg-black opacity-100 transition-opacity duration-200"></span>
+                <span id="icon-lower"
+                    class="absolute bottom-0 block w-full h-0.5 bg-black transition-transform duration-200"></span>
+            </div>
+        </button>
+
+        <div class="group bg-inherit xl:flex-1">
+            <ul id="nav-list"
+                class="absolute xl:static top-full left-0 right-0 w-full bg-inherit pb-5 xl:p-0 xl:h-auto flex-col xl:flex-row items-center gap-3 xl:gap-5 xl:flex hidden xl:w-full xl:justify-between">
+
+                <li class="xl:flex flex-col items-center hidden">
+                    <a href="/" class="flex items-center space-x-2 my-2">
+                        <img class="h-20 xl:h-24" src="/images/logo.png" alt="" />
+                    </a>
+                </li>
+
+                <li class="w-full xl:w-auto">
+                    <div onmouseenter="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.remove('hidden');
+    this.querySelector('#dropdwon-list').classList.add('flex');
+  " 
+  onmouseleave="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.add('hidden');
+    this.querySelector('#dropdwon-list').classList.remove('flex');
+  "
+  class="relative flex flex-col items-center xl:items-start font-bold">
+  <button class="flex flex-row items-center relative" onclick="
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('hidden');
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('flex');
+    ">
+    Mortgages
+  </button>
+
+  <ul id="dropdwon-list" class="xl:absolute xl:top-full flex-col items-center xl:items-start bg-accent px-2 gap-3 pt-3 xl:pb-3
+          xl:px-3 hidden w-full xl:w-auto">
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/first-time-buyers" class="hover:underline whitespace-nowrap">First Time Buyers</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/remortgage" class="hover:underline whitespace-nowrap">Remortgage</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/home-movers" class="hover:underline whitespace-nowrap">Home Movers</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/self-employed-mortgages" class="hover:underline whitespace-nowrap">Self Employed Mortgages</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/buy-to-let-mortgages" class="hover:underline whitespace-nowrap">Buy-to-let Mortgages</a>
+    </li>
+    
+  </ul>
+</div>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <div onmouseenter="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.remove('hidden');
+    this.querySelector('#dropdwon-list').classList.add('flex');
+  " 
+  onmouseleave="
+    if(screen.width < 1024) return;
+    this.querySelector('#dropdwon-list').classList.add('hidden');
+    this.querySelector('#dropdwon-list').classList.remove('flex');
+  "
+  class="relative flex flex-col items-center xl:items-start font-bold">
+  <button class="flex flex-row items-center relative" onclick="
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('hidden');
+      this.parentElement.querySelector('#dropdwon-list').classList.toggle('flex');
+    ">
+    Insurance
+  </button>
+
+  <ul id="dropdwon-list" class="xl:absolute xl:top-full flex-col items-center xl:items-start bg-accent px-2 gap-3 pt-3 xl:pb-3
+          xl:px-3 hidden w-full xl:w-auto">
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/buildings-and-contents-insurance" class="hover:underline whitespace-nowrap">Building &amp; Contents</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/life-and-critical-illness-insurance" class="hover:underline whitespace-nowrap">Life &amp; Critical Illness</a>
+    </li>
+    
+    <li class="flex flex-col items-center xl:list-item">
+      <a href="/income-protection" class="hover:underline whitespace-nowrap">Income Protection</a>
+    </li>
+    
+  </ul>
+</div>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/financial-planning" class="hover:underline font-bold">Financial Planning</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/our-people" class="hover:underline font-bold">Our People</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/refer-a-friend" class="hover:underline font-bold">Refer A Friend</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/contact-us" class="hover:underline font-bold">Contact Us</a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="/book-appointment" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="nav-backdrop" onclick="ToggleNav()"
+        class="hidden xl:hidden absolute top-full h-screen left-0 right-0 bg-black opacity-50"></div>
+</header>
+
+  <main>
+    
+
+<div class="flex flex-col justify-center container-sizing py-8 gap-12 h-[30vh] sm:h-[50vh] min-h-[600px] sm:min-h-[800px]">
+        <h1 class="text-white w-fit text-[clamp(2.5rem,5vw,6rem)] leading-[clamp(3rem,6vw,7.2rem)] font-bold block">Our People</h1>
+        <h2 class="text-white text-[clamp(1.75rem,3.5vw,4rem)] leading-[clamp(2.1rem,4.2vw,4.8rem)] font-bold block">Meet our team of Professional Advisers</h2>
+
+        
+        <div class="flex flex-row gap-4 flex-wrap">
+            <a href="/book-appointment" class="font-bold w-fit rounded-3xl py-4 px-8 bg-black cursor-pointer text-white">Book
+                Appointment</a>
+            <a href="/contact-us" class="font-bold w-fit rounded-3xl py-4 px-8 bg-white cursor-pointer">Contact Us</a>
+        </div>
+        
+</div>
+
+<div class="flex flex-row justify-center flex-wrap container-gapping container-sizing">
+        <div class="w-full md:w-[32rem] md:aspect-[4/6] bg-white rounded-lg flex flex-col items-center md:justify-between p-4 gap-4 border-4 border-blue-900">
+        <div class="flex flex-col w-full items-center gap-4">
+            <img src="/our-people/images/roland.jpg" alt="" class="w-4/6 aspect-square object-cover rounded-full">
+
+            <div class="flex flex-col items-center">
+                <h3 class="font-bold">Roland W Scott</h3>
+                <h3>Practice Principal</h3>
+            </div>
+
+            <p>Roland began his career in Financial Services in 1992 with The Prudential, specialising in Pensions, Savings and Investments. In 1997 Roland decided to start up his own practice of advisers. In conjunction with the day-to-day management of the practice, Roland still looks after his ever growing client bank whilst specialising in mortgages and protection. Roland enjoys holidays, caravanning and tinkering about with his classic Morris Minor. </p>
+        </div>
+
+        <div class="flex flex-row justify-between items-end w-full flex-wrap gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:01334656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                    <a href="tel:01334656511" class="underline">01334 656511</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:&#43;447973108265" class="fa-solid fa-phone text-4xl w-fit"> </a>
+                    <a href="tel:&#43;447973108265" class="underline">07973 108265</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="mailto:roland@scotmortgages.co.uk" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                    <a href="mailto:roland@scotmortgages.co.uk" class="underline">roland@scotmortgages.co.uk</a>
+                </div>
+            </div>
+            
+            <a href="/contact" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+        </div>
+
+
+    </div>
+
+        <div class="w-full md:w-[32rem] md:aspect-[4/6] bg-white rounded-lg flex flex-col items-center md:justify-between p-4 gap-4 border-4 border-blue-900">
+        <div class="flex flex-col w-full items-center gap-4">
+            <img src="/our-people/images/brian.jpg" alt="" class="w-4/6 aspect-square object-cover rounded-full">
+
+            <div class="flex flex-col items-center">
+                <h3 class="font-bold">Brian Morris</h3>
+                <h3>Senior Financial Planning Consultant</h3>
+            </div>
+
+            <p>Brian has worked in the Financial Services sector since 2003. He started his career as a Financial Adviser with the Co-operative Insurance Society before joining the practice in 2006, winning the Top Adviser award in The Flying Start programme. He has achieved a Diploma in Financial Services and as well as offering Mortgage, Protection and General Insurance advice he specialises in Pensions, Savings and Investments. Outside of work Brian enjoys playing and watching football and has an active family life.</p>
+        </div>
+
+        <div class="flex flex-row justify-between items-end w-full flex-wrap gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:01334656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                    <a href="tel:01334656511" class="underline">01334 656511</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:&#43;447894140482" class="fa-solid fa-phone text-4xl w-fit"> </a>
+                    <a href="tel:&#43;447894140482" class="underline">07894 140482</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="mailto:brian@scotmortgages.co.uk" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                    <a href="mailto:brian@scotmortgages.co.uk" class="underline">brian@scotmortgages.co.uk</a>
+                </div>
+            </div>
+            
+            <a href="/contact" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+        </div>
+
+
+    </div>
+
+        <div class="w-full md:w-[32rem] md:aspect-[4/6] bg-white rounded-lg flex flex-col items-center md:justify-between p-4 gap-4 border-4 border-blue-900">
+        <div class="flex flex-col w-full items-center gap-4">
+            <img src="/our-people/images/graham.jpg" alt="" class="w-4/6 aspect-square object-cover rounded-full">
+
+            <div class="flex flex-col items-center">
+                <h3 class="font-bold">Graham Smith</h3>
+                <h3>Mortgage Adviser</h3>
+            </div>
+
+            <p>Graham joined the business in 2015 after completing a degree in Biomedical Science at Abertay University. Since completing his Mortgage Advice qualifications in 2016, Graham’s primary focus has been to support clients with their mortgage and protection needs with the best possible client outcome at forefront of any advice given. Graham has experience facilitating a wide variety of mortgages over and above the everyday including self employed, limited company, self build, extensions and so on. Graham lives with his Wife and dog (Duffy) in Newport-on-Tay and enjoys an active social life. He has always been a sporty person enjoying cycling, running and predominantly rugby, formerly being the Captain of Madras Rugby Club in St Andrews. A deteriorating body has put an end to his playing days however he still loves to get involved by coaching ladies rugby and watching as many games as he can. </p>
+        </div>
+
+        <div class="flex flex-row justify-between items-end w-full flex-wrap gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:01334656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                    <a href="tel:01334656511" class="underline">01334 656511</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:&#43;447889931990" class="fa-solid fa-phone text-4xl w-fit"> </a>
+                    <a href="tel:&#43;447889931990" class="underline">07889 931990</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="mailto:graham@scotmortgages.co.uk%20" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                    <a href="mailto:graham@scotmortgages.co.uk%20" class="underline">graham@scotmortgages.co.uk </a>
+                </div>
+            </div>
+            
+            <a href="/contact" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+        </div>
+
+
+    </div>
+            
+            <div class="w-full md:w-[32rem] md:aspect-[4/6] bg-white rounded-lg flex flex-col items-center md:justify-between p-4 gap-4 border-4 border-blue-900">
+        <div class="flex flex-col w-full items-center gap-4">
+            <img src="/our-people/images/donna.jpg" alt="" class="w-4/6 aspect-square object-cover rounded-full">
+
+            <div class="flex flex-col items-center">
+                <h3 class="font-bold">Donna Leslie</h3>
+                <h3>Mortgage Adviser</h3>
+            </div>
+
+            <p>Donna is our newest member of the team and joined us after being a long-term client. She is an Abertay University graduate with a degree in Commerce. After graduation she has held positions in office management, and for the past 3 years she has been Property Manager in her own buy-to-let and holiday rental business. Donna completed her Mortgage and Protection Advice qualifications in 2024 and looks after clients in Angus and beyond, drawing from her own personal knowledge of the mortgage Market. Donna is based in Kirriemuir and lives with her husband and two daughters. Her free time is spent renovating property, hillwalking and gardening.</p>
+        </div>
+
+        <div class="flex flex-row justify-between items-end w-full flex-wrap gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:01334656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                    <a href="tel:01334656511" class="underline">01334 656511</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:&#43;447875612329" class="fa-solid fa-phone text-4xl w-fit"> </a>
+                    <a href="tel:&#43;447875612329" class="underline">07875 612329</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="mailto:%20donna@scotmortgages.co.uk" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                    <a href="mailto:%20donna@scotmortgages.co.uk" class="underline"> donna@scotmortgages.co.uk</a>
+                </div>
+            </div>
+            
+            <a href="/contact" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+        </div>
+
+
+    </div>
+            
+        <div class="w-full md:w-[32rem] md:aspect-[4/6] bg-white rounded-lg flex flex-col items-center md:justify-between p-4 gap-4 border-4 border-blue-900">
+        <div class="flex flex-col w-full items-center gap-4">
+            <img src="/our-people/images/stephen.jpg" alt="" class="w-4/6 aspect-square object-cover rounded-full">
+
+            <div class="flex flex-col items-center">
+                <h3 class="font-bold">Stephen J McKay</h3>
+                <h3>Mortgage &amp; Protection Adviser</h3>
+            </div>
+
+            <p>Stephen has worked in Financial Services since 2005 initially as a Customer Account Manager within HSBC before joining Co-operative Financial Services as a Financial Adviser in 2006. Stephen joined RBS in 2011, as a Financial Planning Manager, and in more recent years has been a Mortgage Adviser. He joined the team at ScotMortgages in 2023, bringing his experience to the practice. Outside of work, Stephen is a keen golfer and kept busy with his young family.</p>
+        </div>
+
+        <div class="flex flex-row justify-between items-end w-full flex-wrap gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:01334656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                    <a href="tel:01334656511" class="underline">01334 656511</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:&#43;447973108265" class="fa-solid fa-phone text-4xl w-fit"> </a>
+                    <a href="tel:&#43;447973108265" class="underline">07973 108265</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="mailto:%20stephen@scotmortgages.co.uk%20" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                    <a href="mailto:%20stephen@scotmortgages.co.uk%20" class="underline"> stephen@scotmortgages.co.uk </a>
+                </div>
+            </div>
+            
+            <a href="/contact" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+        </div>
+
+
+    </div>
+
+        <div class="w-full md:w-[32rem] md:aspect-[4/6] bg-white rounded-lg flex flex-col items-center md:justify-between p-4 gap-4 border-4 border-blue-900">
+        <div class="flex flex-col w-full items-center gap-4">
+            <img src="/our-people/images/douglas.jpeg" alt="" class="w-4/6 aspect-square object-cover rounded-full">
+
+            <div class="flex flex-col items-center">
+                <h3 class="font-bold">Douglas R Hume</h3>
+                <h3>Practice Support</h3>
+            </div>
+
+            <p>Douglas has worked in the Financial Services sector for 30 years. Before joining the business in 2005 he enjoyed a long and successful career with Prudential Assurance. Douglas specialised in the protection and general insurance markets. Since his retirement Douglas still works closely with the Advisers who look after his former clients. Outside of work Douglas is a keen sports fan and especially enjoys watching football and golf. He is also an avid gardener and now spends a lot of time with his grandchildren.</p>
+        </div>
+
+        <div class="flex flex-row justify-between items-end w-full flex-wrap gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:01334656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                    <a href="tel:01334656511" class="underline">01334 656511</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="tel:&#43;447974106949" class="fa-solid fa-phone text-4xl w-fit"> </a>
+                    <a href="tel:&#43;447974106949" class="underline">07974 106949</a>
+                </div>
+    
+                <div class="flex flex-row items-center gap-2">
+                    <a href="mailto:drhume53@yahoo.com%20" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                    <a href="mailto:drhume53@yahoo.com%20" class="underline">drhume53@yahoo.com </a>
+                </div>
+            </div>
+            
+            <a href="/contact" class="contact-btn px-4 py-1 font-bold">Book Appointment</a>
+        </div>
+
+
+    </div>
+
+    </div>
+</div>
+
+
+  </main>
+
+  <footer class="bg-accent flex flex-col py-4 container-gapping items-center">
+    <div class="container-sizing container-gapping flex flex-col lg:flex-row lg:justify-around">
+        <div class="lg:w-fit flex flex-col gap-2">
+            <h3 class="font-bold">Contact</h3>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="mailto:info@scotmortgages.co.uk" class="fa-solid fa-envelope text-4xl w-fit"> </a>
+                <a href="mailto:info@scotmortgages.co.uk" class="underline">info@scotmortgages.co.uk</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="tel:01334 656511" class="fa-solid fa-tty text-4xl w-fit"> </a>
+                <a href="tel:01334 656511" class="underline">01334 656511</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="https://www.instagram.com/scotmortgages/"
+                    class="fa-solid fa-brands fa-instagram text-4xl w-fit"> </a>
+                <a href="https://www.instagram.com/scotmortgages/" class="underline">@scotmortgages</a>
+            </div>
+
+            <div class="flex flex-row items-center gap-2">
+                <a href="https://www.facebook.com/ScotMortgages" class="fa-solid fa-brands fa-facebook text-4xl w-fit">
+                </a>
+                <a href="https://www.facebook.com/ScotMortgages" class="underline">@ScotMortgages</a>
+            </div>
+        </div>
+        <div class="lg:w-fit">
+            <h3 class="font-bold">Find Us</h3>
+
+            <address>
+                Westrigg,
+                West Port
+                Cupar
+                KY15 4AN
+            </address>
+
+            <iframe class="w-full max-w-[512px] lg:max-w-64 aspect-square"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.7076873119368!2d-3.0224474!3d56.3183477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48864fc0de85084b%3A0x9d746ea3b479790e!2sScotMortgages%20and%20Financial%20Services!5e1!3m2!1sen!2suk!4v1761841101484!5m2!1sen!2suk"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="lg:w-fit">
+            <h3 class="font-bold">Useful Links</h3>
+            <ul class="list-none">
+                <li>
+                    <a href="/" class="hover:underline">Home</a>
+                </li>
+                <li>
+                    <a href="/first-time-buyers" class="hover:underline">First Time Buyers</a>
+                </li>
+                <li>
+                    <a href="/remortgage" class="hover:underline">Remortgage</a>
+                </li>
+                <li>
+                    <a href="/home-movers" class="hover:underline">Home Movers</a>
+                </li>
+                <li>
+                    <a href="/self-employed-mortgages" class="hover:underline">Self Employed Mortgages</a>
+                </li>
+                <li>
+                    <a href="/buy-to-let-mortgages" class="hover:underline">Buy-to-let Mortgages</a>
+                </li>
+                <li>
+                    <a href="/buildings-and-contents-insurance" class="hover:underline">Buildings & Contents Insurance</a>
+                </li>
+                <li>
+                    <a href="/life-and-critical-illness-insurance" class="hover:underline">Life & Critical Illness Insurance</a>
+                </li>
+                <li>
+                    <a href="/income-protection" class="hover:underline">Income Protection</a>
+                </li>
+                <li>
+                    <a href="/financial-planning" class="hover:underline">Financial Planning</a>
+                </li>
+                <li>
+                    <a href="/our-people" class="hover:underline">Our People</a>
+                </li>
+                <li>
+                    <a href="/refer-a-friend" class="hover:underline">Refer A Friend</a>
+                </li>
+                <li>
+                    <a href="/contact-us" class="hover:underline">Contact Us</a>
+                </li>
+                <li>
+                    <a href="/book-appointment" class="hover:underline">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-sizing container-gapping text-center flex flex-col items-center">
+        <p>The information on this website is subject to the UK regulatory regime and is therefore targeted at consumers
+            in the UK.</p>
+        <p>Copyright © 2025 ScotMortgages & Financial Services</p>
+    </div>
+</footer>
+</body>
+
+<script>
+    function setHeaderOffset() {
+        const header = document.getElementById("header");
+        if (!header) return;
+
+        document.body.style.marginTop = header.offsetHeight + "px";
+    }
+
+    window.addEventListener("DOMContentLoaded", setHeaderOffset);
+    window.addEventListener("load", setHeaderOffset);
+    window.addEventListener("resize", setHeaderOffset);
+</script>
+</html>
